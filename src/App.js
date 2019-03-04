@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Peer from "simple-peer";
+import wrtc from "wrtc";
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class App extends Component {
     this.state = {
       peer: new Peer({
         initiator: window.location.hash === "#1",
-        trickle: false
+        trickle: false,
+        wrtc: wrtc
       }),
       thisPeer: " ",
       otherPeer: " ",
